@@ -118,14 +118,18 @@
   <div id="counter">👀 Loading views...</div>
 
   <script>
-    // Simple public counter using CountAPI
-    const counterEl = document.getElementById('counter');
-    fetch('https://api.countapi.xyz/hit/anandi-family/ganesh-gallery')
-      .then(res => res.json())
-      .then(data => {
-        counterEl.innerText = `👀 This gallery has been viewed ${data.value} times.`;
-      });
-  </script>
+  const counterEl = document.getElementById('counter');
+  fetch('https://api.countapi.xyz/hit/yashanandi.github.io/ganpati-gallery')
+    .then(res => res.json())
+    .then(data => {
+      counterEl.innerText = `👀 This gallery has been viewed ${data.value} times.`;
+    })
+    .catch(() => {
+      counterEl.innerText = "⚠️ Counter service not available.";
+    });
+</script>
+
 
 </body>
 </html>
+
