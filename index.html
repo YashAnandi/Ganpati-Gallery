@@ -115,21 +115,19 @@
   </div>
 
   <!-- Counter -->
-  <div id="counter">👀 Loading views...</div>
+  <p>Views: <span id="visits">Loading...</span></p>
 
-  <script>
-  const counterEl = document.getElementById('counter');
-  fetch('https://api.countapi.xyz/hit/yashanandi.github.io/ganpati-gallery')
-    .then(res => res.json())
+<script>
+  fetch('https://api.countapi.xyz/hit/yashanandi-ganpati-gallery/views')
+    .then(response => response.json())
     .then(data => {
-      counterEl.innerText = `👀 This gallery has been viewed ${data.value} times.`;
-    })
-    .catch(() => {
-      counterEl.innerText = "⚠️ Counter service not available.";
+      document.getElementById('visits').innerText = data.value;
     });
 </script>
 
 
+
 </body>
 </html>
+
 
